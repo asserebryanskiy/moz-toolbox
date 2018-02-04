@@ -1,0 +1,24 @@
+{{#partial "content"}}
+    {{#if flashMessage}}
+        <p id="flash-message">{{ flashMessage }}</p>
+    {{/if}}
+    <form action="/random/generator" method="get">
+        <h1>Сгенерировать случайные числа с</h1>
+        <input class="from-to-input" type="text" placeholder="1" class="random-number-input" name="from" value={{from}}>
+        <h1>по</h1>
+        <input class="from-to-input" type="text" placeholder="24" class="random-number-input" name="to" value={{to}}>
+        <br>
+        <input id="disallow-repeats-checkbox" type="checkbox" name="disallowRepeats">
+        <label for="disallow-repeats-checkbox">Не допускать повторы?</label>
+        <br>
+        <label for="alwaysSameNumberField">Всегда показывать число </label>
+        <input type="text" id="alwaysSameNumberField" name="alwaysSameNumber">
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 7v-6l11 11-11 11v-6h-13v-10z"></path></svg>
+        </button>
+    </form>
+    <div id="content">
+    </div>
+{{/partial}}
+
+{{> "random/base.hbs"}}
